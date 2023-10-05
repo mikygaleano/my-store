@@ -1,16 +1,16 @@
 import { HashRouter, Route, Routes } from "react-router-dom"
 import { ProductsPage } from "./pages/ProductsPage"
-import { NavBar } from "./components/NavBar"
-import { useListCategories } from "./hooks/useListCategories";
+import { Header } from "./components/header/Header"
 
 
 function App() {
 
-  const { categories, loading } = useListCategories();
+
+
 
   return (
     <HashRouter>
-      <NavBar categories={categories} loading={loading}/>
+      <Header />
       <Routes>
         <Route path="/" element={<ProductsPage/>} />
         <Route path="/:categoryName" element={<ProductsPage/>} />

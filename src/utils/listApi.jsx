@@ -1,8 +1,6 @@
 
 import { fakeStoreApi } from "./constantes";
 
-// URL de la API de FakeStore
-
 // Función para obtener todos los productos
 export async function getAllProducts() {
   try {

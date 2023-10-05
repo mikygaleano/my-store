@@ -11,7 +11,7 @@ export const NavBar = ({categories, loading})=> {
 
     return (
         <nav>
-            <ul>
+            <ul className="flex gap-2">
                 <li>
                     <NavLink 
                         to={'/'}>
