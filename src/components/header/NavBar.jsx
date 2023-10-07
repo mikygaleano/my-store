@@ -13,15 +13,15 @@ export const NavBar = ({categories, loading, open, btnCategories})=> {
     }
 
     return (
-        <nav className="place-self-center flex gap-4">
-            <div className="flex flex-col">
+        <nav className="self-start inline-flex gap-3">
+            <div className="w-20 z-10">
                 <button 
-                    className="bg-transparent"
+                    className="bg-transparent cursor-pointer"
                     type="button"
                     onClick={btnCategories}
                     >Categorías
                 </button>
-                <ul className={`${open? 'visible flex flex-col gap-3 mt-5': 'hidden'}`}>
+                <ul className={`${open? 'visible w-48 h-80 flex flex-col gap-3 mt-3 bg-slate-800 text-white rounded-md justify-start p-4': 'hidden'}`}>
                     {
                         categories.map((category, index) => (
                             <li key={index}>
@@ -34,7 +34,7 @@ export const NavBar = ({categories, loading, open, btnCategories})=> {
                     }
                 </ul>
             </div>
-            <ul className="flex gap-4">
+            <ul className="flex gap-3">
                 <li>
                     <NavLink 
                         to={'/'}>
