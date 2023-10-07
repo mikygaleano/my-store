@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useListCategories } from "../../hooks/useListCategories";
 import { NavBar } from "./NavBar"
 import { Search } from "./Search";
@@ -6,6 +7,12 @@ import { Search } from "./Search";
 
 export const Header = ()=> {
     const { categories, loadingCategories } = useListCategories();
+
+    const [ open, setOpen  ] = useState(false);
+
+    const btnCategories = ()=> {
+        open? setOpen(false): setOpen(true);
+    }
 
 
     return (
@@ -26,7 +33,11 @@ export const Header = ()=> {
             </div>
             <div className="w-full h-fit grid grid-cols-3 pt-3">
                 <div></div>
-                <NavBar categories={categories} loading={loadingCategories} />
+                <NavBar 
+                    categories={categories} 
+                    loading={loadingCategories} 
+                    open={open} 
+                    btnCategories={btnCategories} />
                 <div></div>
             </div>
         </header>

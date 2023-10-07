@@ -2,13 +2,9 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 
 
-export const NavBar = ({categories, loading})=> {
+export const NavBar = ({categories, loading, open, btnCategories})=> {
 
-    const [ open, setOpen  ] = useState(false);
-
-    const btnCategories = ()=> {
-        open? setOpen(false): setOpen(true);
-    }
+    
 
     if (loading) {
         return (
