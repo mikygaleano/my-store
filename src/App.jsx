@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProductsPage/>} />
         <Route path="/:categoryName" element={<ProductsPage/>} />
+        <Route path="/:title" element={<ProductsPage/>} />
         <Route path="*" element={<p>Page not found</p>} />
       </Routes>
     </HashRouter>

@@ -31,6 +31,19 @@ export async function getProductsByCategory(categoryName) {
   }
 }
 
+export async function getProductsByTitle(title) {
+  let productsName;
+
+  try {
+    productsName = await getAllProducts();
+    console.log(productsName.filter(products => products.title === title))
+    
+  } catch (error) {
+    console.error(`Error al obtener productos para el title ${title}:`, error);
+    throw error;
+  }
+}
+
 
 
 

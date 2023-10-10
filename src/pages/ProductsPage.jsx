@@ -4,9 +4,10 @@ import { useListApi } from "../hooks/useListApi"
 
 export const ProductsPage = ()=> {
 
-    const { categoryName } = useParams();
+    const { categoryName, title } = useParams();
 
-    const { data, loading, error } = useListApi(categoryName);
+    const { data, loading, error } = useListApi(categoryName, title);
+
 
     if (loading) {
         return (

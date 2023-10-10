@@ -7,12 +7,19 @@ import { NavCuenta } from "./NavCuenta";
 
 
 export const Header = ()=> {
+    
+    const [ inputData, setInputData  ] = useState('');
+
     const { categories, loadingCategories } = useListCategories();
 
     const [ open, setOpen  ] = useState(false);
 
     const btnCategories = ()=> {
         open? setOpen(false): setOpen(true);
+    }
+
+    const inputChangeSearch = (e)=> {
+        setInputData(e.target.value)
     }
 
 
@@ -28,7 +35,7 @@ export const Header = ()=> {
                             src="public/logo__mercado_libre.png" 
                             alt="logo mercado libre" />  
                     </Link>
-                    <Search />
+                    <Search inputChangeSearch={inputChangeSearch} inputData={inputData} />
                 </div>
                 <img
                     className="w-96 h-10 place-self-end mb-auto"
