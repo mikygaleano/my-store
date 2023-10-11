@@ -1,11 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useListApi } from "../hooks/useListApi"
 
 
 export const ProductsPage = ()=> {
 
-    const { categoryName, title } = useParams();
-
+    const { categoryName } = useParams(); // Obtenemos el parámetro de ruta
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const title = searchParams.get("title");
+    
     const { data, loading, error } = useListApi(categoryName, title);
 
 
@@ -20,6 +23,7 @@ export const ProductsPage = ()=> {
             <h1>{error}</h1>
         )
     };
+
 
     return (
         <>

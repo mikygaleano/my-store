@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllProducts, getProductsByCategory, getProductsByTitle } from "../utils/listApi";
+import { getAllProducts, getProductsByCategory } from "../utils/listApi";
 
 
 export const useListApi = (categoryName, title)=> {
@@ -10,16 +10,17 @@ export const useListApi = (categoryName, title)=> {
 
     useEffect(()=> {
         const dataFetch = async ()=> {
+            
             try {
                 setLoading(true)
                 let productList;
                 if (categoryName) {
                     productList = await getProductsByCategory(categoryName);
                 } else if (title) {
-                    productList = await getProductsByTitle(title);
+                    const getTitle = await getAllProducts();
+                    productList = await getTitle.filter(product => product.title.includes(title))
                 } else {
                     productList = await getAllProducts();
-                    console.log(productList.filter(product => product.title === title))
                 };
                 setData(productList);
             } catch (error) {

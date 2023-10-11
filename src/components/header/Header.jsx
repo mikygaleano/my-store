@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useListCategories } from "../../hooks/useListCategories";
 import { NavBar } from "./NavBar"
@@ -7,7 +7,9 @@ import { NavCuenta } from "./NavCuenta";
 
 
 export const Header = ()=> {
-    
+
+    const navigate = useNavigate();
+
     const [ inputData, setInputData  ] = useState('');
 
     const { categories, loadingCategories } = useListCategories();
@@ -18,8 +20,10 @@ export const Header = ()=> {
         open? setOpen(false): setOpen(true);
     }
 
-    const inputChangeSearch = (e)=> {
-        setInputData(e.target.value)
+    const inputChangeSearch = (e) => {
+        const newSearch = e.target.value;
+        setInputData(newSearch);
+        navigate(`/?title=${encodeURIComponent(newSearch)}`);
     }
 
 
