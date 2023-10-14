@@ -28,6 +28,13 @@ export const ProductsPage = ()=> {
 
     const { data, loading, error } = useListApi(categoryName, title);
 
+    if (loading) {
+        return (
+           <div className="w-full justify-self-center flex place-content-center">
+            <h3>Loading...</h3>
+           </div>
+        )
+    }
     
 
     if (error) {
@@ -42,8 +49,8 @@ export const ProductsPage = ()=> {
             <div className="w-1/4">
 
             </div>
-            <div className="w-3/4 block mt-10 mb-10">
-                <CardsProducts data={data} loading={loading} />
+            <div className="w-3/4 flex flex-col mt-10 mb-10">
+                <CardsProducts data={data}/>
             </div>
         </section>
     )

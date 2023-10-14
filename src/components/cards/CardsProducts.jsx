@@ -1,21 +1,22 @@
+import { usePagination } from "../../hooks/usePagination";
 
 
-export const CardsProducts = ({ data, loading })=> {
-
-    if (loading) {
-        return (
-           <div className="w-full justify-self-center flex place-content-center">
-            <h3>Loading...</h3>
-           </div>
-        )
-    }
+export const CardsProducts = ({ data })=> {
+   
+    const {
+        next,
+        prev,
+        currentProducts,
+        currentPage,
+        totalPages
+    } = usePagination(data);
 
     return (
         <>
             {
-                    data.map((product, index) => (
+                    currentProducts.map((product, index) => (
                         <article
-                        className="w-5/6 h-56 flex flex-row gap-5 border shadow-md p-1"
+                        className="place-self-center w-5/6 h-56 flex flex-row gap-5 border shadow-md p-1"
                             key={index}
                         >
                             <figure className="w-1/4 h-36 m-auto cursor-pointer">
@@ -33,6 +34,11 @@ export const CardsProducts = ({ data, loading })=> {
                         </article>
                     ))
             }
+            <div className="place-self-center inline-flex gap-5 mt-5">
+                <button onClick={prev}>Anterior</button>
+                <span>{currentPage} de {totalPages}</span>
+                <button onClick={next}>Siguiente</button>
+            </div>
         </>
     )
 }
