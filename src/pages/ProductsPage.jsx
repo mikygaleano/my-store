@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useListApi } from "../hooks/useListApi"
+import { useEffect, useState } from "react";
 
 
 export const ProductsPage = ()=> {
@@ -7,9 +8,25 @@ export const ProductsPage = ()=> {
     const { categoryName } = useParams(); // Obtenemos el parámetro de ruta
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const title = searchParams.get("title");
+
+    const [ title, setTitle ] = useState('');
     
+    
+
+    const resetTitle = ()=> {
+        const newTitle = searchParams.get('title')
+        setTitle('');
+        setTitle(newTitle)
+    };
+    
+
+
+    useEffect(()=> {
+        resetTitle();
+    },[searchParams]);
+
     const { data, loading, error } = useListApi(categoryName, title);
+
 
 
     if (loading) {
@@ -20,7 +37,7 @@ export const ProductsPage = ()=> {
 
     if (error) {
         return (
-            <h1>{error}</h1>
+            <h1>Hubo un error en el fetching de datos</h1>
         )
     };
 

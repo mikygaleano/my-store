@@ -2,7 +2,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 
 
-export const NavBar = ({categories, loading, open, btnCategories})=> {
+export const NavBar = ({categories, loading, error, open, btnCategories})=> {
 
     
 
@@ -12,11 +12,17 @@ export const NavBar = ({categories, loading, open, btnCategories})=> {
         )
     }
 
+    if (error) {
+        return (
+            <h3>Error en el fetching de datos</h3>
+        )
+    }
+
     return (
-        <nav className="self-start inline-flex gap-3">
-            <div className="w-20 z-10">
+        <nav className="flex flex-row">
+            <div className="w-20 z-10 pl-1">
                 <button 
-                    className="bg-transparent cursor-pointer"
+                    className="bg-transparent cursor-pointer text-sm text-neutral-500"
                     type="button"
                     onClick={btnCategories}
                     >Categorías
@@ -26,6 +32,7 @@ export const NavBar = ({categories, loading, open, btnCategories})=> {
                         categories.map((category, index) => (
                             <li key={index}>
                                 <NavLink 
+                                    className='text-xs'
                                     to={category}>
                                         {category}
                                 </NavLink>
@@ -34,7 +41,7 @@ export const NavBar = ({categories, loading, open, btnCategories})=> {
                     }
                 </ul>
             </div>
-            <ul className="flex gap-3">
+            <ul className="flex gap-3 m-1 text-sm text-neutral-500">
                 <li>
                     <NavLink 
                         to={'/'}>

@@ -4,9 +4,10 @@ export const NavCuenta = () => {
 
     return (
         <nav>
-            <ul className="flex gap-3">
+            <ul className="flex gap-3 text-sm p-1">
                 <li>
-                    <Link to={'/'}>
+                    <Link
+                        to={'/'}>
                         Creá tu cuenta
                     </Link>
                 </li>
@@ -17,12 +18,16 @@ export const NavCuenta = () => {
                 </li>
                 <li>
                     <Link to={'/'}>
-                         compras
+                        Mis compras
                     </Link>
                 </li>
                 <li>
-                    <Link to={'/'}>
-                        Carrito
+                    <Link 
+                        to={'/'}>
+                        <img 
+                            className="w-5"
+                            src="public/carrito-de-compras.png" 
+                            alt="carrito" />
                     </Link>
                 </li>
             </ul>

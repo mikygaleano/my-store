@@ -1,6 +1,6 @@
 
 
-export const Search = ({inputData, inputChangeSearch})=> {
+export const Search = ({inputData, inputChangeSearch, inputSubmitSearch})=> {
 
 
     return (
@@ -14,7 +14,14 @@ export const Search = ({inputData, inputChangeSearch})=> {
                 placeholder="Buscar productos, marcas y más..."
                 value={inputData}
                 onChange={(e)=> inputChangeSearch(e)} 
+                onSubmit={(e)=> inputSubmitSearch(e)}
             />
+            <button className="absolute w-8 h-6 right-1/2  border-l-2 mt-2">
+                <img
+                    className="w-4 m-auto"
+                    src="public/lupa.png" 
+                    alt="lupa" />
+            </button>
         </form>
     )
 }

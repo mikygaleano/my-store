@@ -2,7 +2,7 @@
 import { fakeStoreApi } from "./constantes";
 
 // Función para obtener todos los productos
-export async function getAllProducts() {
+export const getAllProducts = async ()=> {
   try {
     const response = await fetch(fakeStoreApi);
     if (!response.ok) {
@@ -17,7 +17,7 @@ export async function getAllProducts() {
 }
 
 // Función para obtener productos por categoría
-export async function getProductsByCategory(categoryName) {
+export const getProductsByCategory = async (categoryName)=> {
   try {
     const response = await fetch(`${fakeStoreApi}/category/${categoryName}`);
     if (!response.ok) {
