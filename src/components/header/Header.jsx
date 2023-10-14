@@ -36,7 +36,7 @@ export const Header = ()=> {
 
     return (
         <header className="w-full h-24  max-w-7xl grid grid-rows-2 bg-yellow_primary p-1">
-            <div className="w-full h-5/6 self-start grid grid-cols-2 gap-1 mt-2">
+            <div className="w-full h-full self-start grid grid-cols-2 gap-1 mt-2">
                 <div className="w-full self-start flex justify-between gap-14">
                     <Link
                         className="w-2/5 h-fit"
@@ -52,7 +52,7 @@ export const Header = ()=> {
                     className="w-96 h-10 place-self-end mb-auto"
                     src="public\subscripcion_nivel_6.webp" alt="subscripcion nivel 6" />
             </div>
-            <div className="w-full h-fit grid grid-cols-2 pt-3">
+            <div className="w-full h-5/6 grid grid-cols-2 pt-3">
 
                 <div className="w-full flex justify-between">
 
@@ -62,7 +62,7 @@ export const Header = ()=> {
                             src="public/ubicacion.png" 
                             alt="icon ubicacion" />
                         <div className="flex flex-col">
-                            <span className="text-xs">Enviar a</span>
+                            <span className="text-xs text-gray-500">Enviar a</span>
                             <span className="text-sm">Buenos Aires 1876</span>
                         </div>
                     </div>

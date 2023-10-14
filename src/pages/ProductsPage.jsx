@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useListApi } from "../hooks/useListApi"
 import { useEffect, useState } from "react";
+import { CardsProducts } from "../components/cards/CardsProducts";
 
 
 export const ProductsPage = ()=> {
@@ -27,13 +28,7 @@ export const ProductsPage = ()=> {
 
     const { data, loading, error } = useListApi(categoryName, title);
 
-
-
-    if (loading) {
-        return (
-            <h1>Loading...</h1>
-        )
-    };
+    
 
     if (error) {
         return (
@@ -43,16 +38,13 @@ export const ProductsPage = ()=> {
 
 
     return (
-        <>
-            {
-                data.map(product => (
-                    <div key={product.id}>
-                        <strong>{product.category}</strong>
-                        <h2>{product.title}</h2>
-                        <span>{product.price}</span>
-                    </div>
-                ))
-            }
-        </>
+        <section className="w-full flex flex-row">
+            <div className="w-1/4">
+
+            </div>
+            <div className="w-3/4 block mt-10 mb-10">
+                <CardsProducts data={data} loading={loading} />
+            </div>
+        </section>
     )
 }
