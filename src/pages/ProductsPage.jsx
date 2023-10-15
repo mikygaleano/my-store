@@ -2,6 +2,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { useListApi } from "../hooks/useListApi"
 import { useEffect, useState } from "react";
 import { CardsProducts } from "../components/cards/CardsProducts";
+import { Aside } from "../components/aside/Aside";
 
 
 export const ProductsPage = ()=> {
@@ -45,9 +46,9 @@ export const ProductsPage = ()=> {
 
 
     return (
-        <section className="w-full flex flex-row">
+        <section className="w-full flex flex-row bg-slate-100">
             <div className="w-1/4">
-
+                <Aside/>
             </div>
             <div className="w-3/4 flex flex-col mt-10 mb-10">
                 <CardsProducts data={data}/>
