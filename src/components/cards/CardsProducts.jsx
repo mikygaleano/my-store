@@ -1,7 +1,7 @@
 import { usePagination } from "../../hooks/usePagination";
 
 
-export const CardsProducts = ({ data })=> {
+export const CardsProducts = ({ data, onClickDatail })=> {
    
     const {
         next,
@@ -19,7 +19,9 @@ export const CardsProducts = ({ data })=> {
                         className="place-self-center w-5/6 h-56 flex flex-row gap-5 border shadow-md p-1 bg-white"
                             key={index}
                         >
-                            <figure className="w-1/4 h-36 m-auto cursor-pointer">
+                            <figure 
+                                onClick={()=> onClickDatail(product.title, product.category)}
+                                className="w-1/4 h-36 m-auto cursor-pointer">
                                 <img 
                                     className="w-fit h-36 object-fill m-auto"
                                     src={product.image} 
@@ -29,8 +31,6 @@ export const CardsProducts = ({ data })=> {
                             <div className="w-3/4 flex flex-col items-start justify-center">
                                 <h2 className="text-md font-light">{product.title}</h2>
                                 <span className="text-xl font-semibold">${product.price}</span>
-                                <span className="text-xs font-extralight">12 x ${Math.ceil(product.price * 12)}</span>
-                                <strong className="font-semibold text-green-600">Envío gratis</strong>
                             </div>
                         </article>
                     ))

@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useListApi } from "../hooks/useListApi"
 import { useEffect, useState } from "react";
 import { CardsProducts } from "../components/cards/CardsProducts";
@@ -6,6 +6,16 @@ import { Aside } from "../components/aside/Aside";
 
 
 export const ProductsPage = ()=> {
+
+    const navigate = useNavigate();
+
+    const onClickDetail = (producTitle, productCategory)=> {
+        if (producTitle) {
+            navigate(`product/detail/${producTitle}`)
+        } else {
+            navigate(`product/detail/${productCategory}`)
+        }
+    }
 
     const { categoryName } = useParams(); // Obtenemos el parámetro de ruta
     const location = useLocation();
@@ -29,6 +39,7 @@ export const ProductsPage = ()=> {
 
     const { data, loading, error } = useListApi(categoryName, title);
 
+
     if (loading) {
         return (
            <div className="w-full justify-self-center flex place-content-center">
@@ -51,7 +62,7 @@ export const ProductsPage = ()=> {
                 <Aside/>
             </div>
             <div className="w-3/4 flex flex-col mt-10 mb-10">
-                <CardsProducts data={data}/>
+                <CardsProducts data={data} onClickDatail={onClickDetail}/>
             </div>
         </section>
     )
