@@ -33,7 +33,7 @@ export const NavBar = ({categories, loading, error, open, btnCategories})=> {
                             <li key={index}>
                                 <NavLink 
                                     className='text-xs'
-                                    to={category}>
+                                    to={`/category/${category}`}>
                                         {category}
                                 </NavLink>
                             </li>

@@ -35,7 +35,7 @@ export const Header = ()=> {
 
 
     return (
-        <header className="w-full h-24  max-w-7xl grid grid-rows-2 bg-yellow_primary p-1">
+        <header className="w-full h-24 min-w-max grid grid-rows-2 bg-yellow_primary p-1">
             <div className="w-full h-full self-start grid grid-cols-2 gap-1 mt-2">
                 <div className="w-full self-start flex justify-between gap-14">
                     <Link

@@ -9,12 +9,8 @@ export const ProductsPage = ()=> {
 
     const navigate = useNavigate();
 
-    const onClickDetail = (producTitle, productCategory)=> {
-        if (producTitle) {
-            navigate(`product/detail/${producTitle}`)
-        } else {
-            navigate(`product/detail/${productCategory}`)
-        }
+    const onClickDetail = (productTitle)=> {
+        navigate(`/product/detail/${productTitle}`)
     }
 
     const { categoryName } = useParams(); // Obtenemos el parámetro de ruta
@@ -61,7 +57,7 @@ export const ProductsPage = ()=> {
             <div className="w-1/4">
                 <Aside/>
             </div>
-            <div className="w-3/4 flex flex-col mt-10 mb-10">
+            <div className="w-3/4 flex flex-col mb-10">
                 <CardsProducts data={data} onClickDatail={onClickDetail}/>
             </div>
         </section>

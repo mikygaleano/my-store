@@ -13,6 +13,7 @@ export const CardsProducts = ({ data, onClickDatail })=> {
 
     return (
         <>
+            <div className="flex flex-col mt-10">
             {
                     currentProducts.map((product, index) => (
                         <article
@@ -20,7 +21,7 @@ export const CardsProducts = ({ data, onClickDatail })=> {
                             key={index}
                         >
                             <figure 
-                                onClick={()=> onClickDatail(product.title, product.category)}
+                                onClick={()=> onClickDatail(product.title)}
                                 className="w-1/4 h-36 m-auto cursor-pointer">
                                 <img 
                                     className="w-fit h-36 object-fill m-auto"
@@ -35,6 +36,8 @@ export const CardsProducts = ({ data, onClickDatail })=> {
                         </article>
                     ))
             }
+            
+            </div>
             <div className="place-self-center inline-flex gap-5 mt-5">
                 <button onClick={prev}>Anterior</button>
                 <span>{currentPage} de {totalPages}</span>
