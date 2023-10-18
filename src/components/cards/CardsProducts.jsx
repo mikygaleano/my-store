@@ -15,10 +15,10 @@ export const CardsProducts = ({ data, onClickDatail })=> {
         <>
             <div className="flex flex-col mt-10">
             {
-                    currentProducts.map((product, index) => (
+                    currentProducts.map(product => (
                         <article
                         className="place-self-center w-5/6 h-56 flex flex-row gap-5 border shadow-md p-1 bg-white"
-                            key={index}
+                            key={product.id}
                         >
                             <figure 
                                 onClick={()=> onClickDatail(product.title)}

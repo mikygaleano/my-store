@@ -4,6 +4,7 @@ import { PageDetail } from "../pages/PageDetail"
 
 export const RoutesConfig = ()=> {
 
+
     return (
         <Routes>
             <Route path="/" element={<ProductsPage/>} />

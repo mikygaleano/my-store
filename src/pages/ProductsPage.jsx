@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useListApi } from "../hooks/useListApi"
 import { useEffect, useState } from "react";
@@ -7,13 +8,17 @@ import { Aside } from "../components/aside/Aside";
 
 export const ProductsPage = ()=> {
 
+    const uniquePageId = uuidv4(); // Genera un identificador único para la página
+
+
     const navigate = useNavigate();
+
 
     const onClickDetail = (productTitle)=> {
         navigate(`/product/detail/${productTitle}`)
     }
 
-    const { categoryName } = useParams(); // Obtenemos el parámetro de ruta
+    const { categoryName, id } = useParams(); // Obtenemos el parámetro de ruta
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
 
@@ -53,7 +58,7 @@ export const ProductsPage = ()=> {
 
 
     return (
-        <section className="w-full flex flex-row bg-slate-100">
+        <section key={uniquePageId} className="w-full flex flex-row bg-slate-100">
             <div className="w-1/4">
                 <Aside/>
             </div>
