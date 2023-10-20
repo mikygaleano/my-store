@@ -12,8 +12,7 @@ export const PageDetail = ()=> {
 
 
     return (
-        <section key={uniquePageId} className="w-full grid">
-            <BtnGoBack/>
+        <section key={uniquePageId} className="w-full min-h-screen">
             <CardDetail data={data} loading={loading} />
         </section>
     )

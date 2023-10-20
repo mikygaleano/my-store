@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom"
+import { BtnGoBack } from "../btn/BtnGoBack";
 
 
 export const CardDetail = ({ data, loading })=> {
@@ -19,21 +20,26 @@ export const CardDetail = ({ data, loading })=> {
 
   return (
     <>
-      <article className="place-self-center w-5/6 h-56 flex flex-row gap-5 border shadow-md p-1 bg-white mt-10">
-        <figure className="w-1/4 h-36 m-auto cursor-pointer">
+      <BtnGoBack/>
+      <article className="w-full min-h-screen flex flex-row gap-5 border shadow-md p-1 bg-white mt-10 mb-10">
+        <figure className="w-1/2 h-full m-auto cursor-pointer">
           <img
-            className="w-fit h-36 object-fill m-auto"
+            className="object-fill m-auto"
             src={currentProDetail.image}
             alt={currentProDetail.title}
           />
         </figure>
-        <div className="w-3/4 flex flex-col items-start justify-center">
-          <h2 className="text-md font-light">{currentProDetail.title}</h2>
-          <span className="text-xl font-semibold">${currentProDetail.price}</span>
-          <span className="text-xs font-extralight">
+        <div className="w-1/2 flex flex-col items-start justify-start gap-3 mt-16">
+          <h2 className="text-xl font-bold">{currentProDetail.title}</h2>
+          <span className="text-4xl font-semibold">$ {currentProDetail.price}</span>
+          <span className="text-sm font-extralight">
             12 x ${Math.ceil(currentProDetail.price * 12)}
           </span>
           <strong className="font-semibold text-green-600">Envío gratis</strong>
+          <div className="flex flex-col gap-3 items-start mt-5">
+            <button className="h-fit w-56 bg-blue-400 rounded-md text-white font-semibold p-2">Comprar ahora</button>
+            <button className="h-fit w-56 bg-blue-400 rounded-md text-white font-semibold p-2">Agregar al carrito</button>
+          </div>
         </div>
       </article>
     </>

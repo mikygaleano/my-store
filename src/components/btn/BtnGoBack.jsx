@@ -10,6 +10,8 @@ export const BtnGoBack = ()=> {
     }
 
     return (
-        <button onClick={handleGoBack}>Volver</button>
+        <button
+            className="w-52 h-fit relative top-10 -left-16" 
+            onClick={handleGoBack}>Volver</button>
     )
 }
