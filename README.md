@@ -13,7 +13,7 @@ Este es un proyecto clon de MercadoLibre desarrollado con fines educativos y de 
 
 1. **Clonar el Repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/mercadolibre-clone.git
+   git clone https://github.com/mikygaleano/my-store
 
 2. **Instalar Dependencias:**
 
