@@ -21,7 +21,7 @@ Este es un proyecto clon de MercadoLibre desarrollado con fines educativos y de 
 
 3. **Iniciar la Aplicación:**
 
--npm run dev
+- npm run dev
 
 ## Contribuciones
 
