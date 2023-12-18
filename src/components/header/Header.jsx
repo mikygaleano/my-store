@@ -1,12 +1,13 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useListCategories } from "../../hooks/useListCategories";
-import { NavBar } from "./NavBar"
-import { Search } from "./Search";
-import { NavCuenta } from "./NavCuenta";
+import  NavBar  from "./NavBar"
+import  Search  from "./Search";
+import  NavCuenta  from "./NavCuenta";
 
 
-export const Header = ()=> {
+const Header = ()=> {
 
     const navigate = useNavigate();
 
@@ -43,14 +44,14 @@ export const Header = ()=> {
                         to={'/'}>
                         <img
                             className="w-40 h-fit" 
-                            src="public/logo__mercado_libre.png" 
+                            src="logo__mercado_libre.png" 
                             alt="logo mercado libre" />  
                     </Link>
                     <Search inputChangeSearch={inputChangeSearch} inputSubmitSearch={inputSubmitSearch} inputData={inputData} />
                 </div>
                 <img
                     className="w-96 h-10 place-self-end mb-auto"
-                    src="public\subscripcion_nivel_6.webp" alt="subscripcion nivel 6" />
+                    src="subscripcion_nivel_6.webp" alt="subscripcion nivel 6" />
             </div>
             <div className="w-full h-5/6 grid grid-cols-2 pt-3">
 
@@ -59,7 +60,7 @@ export const Header = ()=> {
                     <div className="w-30 flex">
                         <img 
                             className="w-8 h-8 relative bottom-2"
-                            src="public/ubicacion.png" 
+                            src="ubicacion.png" 
                             alt="icon ubicacion" />
                         <div className="flex flex-col">
                             <span className="text-xs text-gray-500">Enviar a</span>
@@ -83,3 +84,5 @@ export const Header = ()=> {
         </header>
     )
 }
+
+export default Header;

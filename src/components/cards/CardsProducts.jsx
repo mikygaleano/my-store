@@ -1,7 +1,7 @@
 import { usePagination } from "../../hooks/usePagination";
+import  PropTypes  from "prop-types"
 
-
-export const CardsProducts = ({ data, onClickDatail })=> {
+const CardsProducts = ({ data, onClickDatail })=> {
    
     const {
         next,
@@ -46,3 +46,10 @@ export const CardsProducts = ({ data, onClickDatail })=> {
         </>
     )
 }
+
+CardsProducts.propTypes = {
+    data: PropTypes.array.isRequired,
+    onClickDatail: PropTypes.func.isRequired
+}
+
+export default CardsProducts;

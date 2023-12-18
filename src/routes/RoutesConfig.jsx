@@ -1,6 +1,7 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from "react-router-dom"
 import { ProductsPage } from "../pages/ProductsPage"
-import { PageDetail } from "../pages/PageDetail"
+import  PageDetail  from "../pages/PageDetail"
 
 export const RoutesConfig = ()=> {
 

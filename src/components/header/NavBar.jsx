@@ -2,7 +2,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 
 
-export const NavBar = ({categories, loading, error, open, btnCategories})=> {
+const NavBar = ({categories, loading, error, open, btnCategories})=> {
 
     
 
@@ -70,3 +70,5 @@ export const NavBar = ({categories, loading, error, open, btnCategories})=> {
         </nav>
     )
 }
+
+export default NavBar;

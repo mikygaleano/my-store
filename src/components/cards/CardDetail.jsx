@@ -1,8 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useParams } from "react-router-dom"
-import { BtnGoBack } from "../btn/BtnGoBack";
+import  BtnGoBack  from "../btn/BtnGoBack";
+import PropTypes from "prop-types";
 
 
-export const CardDetail = ({ data, loading })=> {
+const CardDetail = ({ data, loading })=> {
 
   const { productTitle } = useParams();
 
@@ -45,8 +47,13 @@ export const CardDetail = ({ data, loading })=> {
     </>
   );
 };
+
+CardDetail.propTypes = {
+  data: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
     
-    
+export default CardDetail;
     
     
     

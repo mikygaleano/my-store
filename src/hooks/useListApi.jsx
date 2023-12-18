@@ -21,7 +21,7 @@ export const useListApi = (categoryName, title)=> {
                     productList = await getTitle.filter(product => product.title.includes(title))
                 } else {
                     productList = await getAllProducts();
-                };
+                }
                 setData(productList);
             } catch (error) {
                 setError(error);

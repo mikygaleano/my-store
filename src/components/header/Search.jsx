@@ -1,6 +1,8 @@
+/* eslint-disable react/react-in-jsx-scope */
+import PropTypes from 'prop-types';
 
 
-export const Search = ({inputData, inputChangeSearch, inputSubmitSearch})=> {
+const Search = ({inputData, inputChangeSearch, inputSubmitSearch})=> {
 
 
     return (
@@ -19,3 +21,11 @@ export const Search = ({inputData, inputChangeSearch, inputSubmitSearch})=> {
        </form>
     )
 }
+
+Search.propTypes = {
+    inputData: PropTypes.string.isRequired,
+    inputChangeSearch: PropTypes.func.isRequired,
+    inputSubmitSearch: PropTypes.func.isRequired
+  };
+
+export default Search;

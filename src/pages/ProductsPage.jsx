@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useListApi } from "../hooks/useListApi"
 import { useEffect, useState } from "react";
-import { CardsProducts } from "../components/cards/CardsProducts";
+import  CardsProducts  from "../components/cards/CardsProducts";
 import { Aside } from "../components/aside/Aside";
 
 
@@ -18,7 +18,7 @@ export const ProductsPage = ()=> {
         navigate(`/product/detail/${productTitle}`)
     }
 
-    const { categoryName, id } = useParams(); // Obtenemos el parámetro de ruta
+    const { categoryName  } = useParams(); // Obtenemos el parámetro de ruta
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
 

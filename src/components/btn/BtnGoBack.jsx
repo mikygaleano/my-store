@@ -1,7 +1,8 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useNavigate } from "react-router-dom";
 
 
-export const BtnGoBack = ()=> {
+const BtnGoBack = ()=> {
 
     const navigate = useNavigate();
 
@@ -15,3 +16,5 @@ export const BtnGoBack = ()=> {
             onClick={handleGoBack}>Volver</button>
     )
 }
+
+export default BtnGoBack;

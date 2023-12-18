@@ -1,6 +1,7 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Link } from "react-router-dom"
 
-export const NavCuenta = () => {
+const NavCuenta = () => {
 
     return (
         <nav>
@@ -26,7 +27,7 @@ export const NavCuenta = () => {
                         to={'/'}>
                         <img 
                             className="w-5"
-                            src="public/carrito-de-compras.png" 
+                            src="carrito-de-compras.png" 
                             alt="carrito" />
                     </Link>
                 </li>
@@ -34,3 +35,5 @@ export const NavCuenta = () => {
         </nav> 
     )
 }
+
+export default NavCuenta;
