@@ -13,18 +13,18 @@ const CardsProducts = ({ data, onClickDatail })=> {
 
     return (
         <>
-            <div className="flex flex-col mt-10">
+            <div className="container h-full flex flex-col mt-10">
             {
                     currentProducts.map(product => (
                         <article
-                        className="place-self-center w-5/6 h-56 flex flex-row gap-5 border shadow-md p-1 bg-white"
+                        className="w-full h-56 flex flex-row gap-5 border shadow-md p-1 bg-white"
                             key={product.id}
                         >
                             <figure 
                                 onClick={()=> onClickDatail(product.title)}
                                 className="w-1/4 h-36 m-auto cursor-pointer">
                                 <img 
-                                    className="w-fit h-36 object-fill m-auto"
+                                    className="h-36 m-auto object-fill"
                                     src={product.image} 
                                     alt={product.title} 
                                 />
@@ -38,7 +38,7 @@ const CardsProducts = ({ data, onClickDatail })=> {
             }
             
             </div>
-            <div className="place-self-center inline-flex gap-5 mt-5">
+            <div className="w-full inline-flex justify-center gap-5 mt-5 relative bottom-0">
                 <button onClick={prev}>Anterior</button>
                 <span>{currentPage} de {totalPages}</span>
                 <button onClick={next}>Siguiente</button>

@@ -36,11 +36,11 @@ const Header = ()=> {
 
 
     return (
-        <header className="w-full h-24 min-w-max grid grid-rows-2 bg-yellow_primary p-1">
+        <header className="w-full min-w-fit h-24 grid grid-rows-2 max-md:flex max-md:flex-col bg-yellow_primary p-1">
             <div className="w-full h-full self-start grid grid-cols-2 gap-1 mt-2">
                 <div className="w-full self-start flex justify-between gap-14">
                     <Link
-                        className="w-2/5 h-fit"
+                        className="w-2/5 h-fit max-md:hidden"
                         to={'/'}>
                         <img
                             className="w-40 h-fit" 
@@ -50,14 +50,14 @@ const Header = ()=> {
                     <Search inputChangeSearch={inputChangeSearch} inputSubmitSearch={inputSubmitSearch} inputData={inputData} />
                 </div>
                 <img
-                    className="w-96 h-10 place-self-end mb-auto"
+                    className="w-96 h-10 place-self-end mb-auto max-md:hidden"
                     src="subscripcion_nivel_6.webp" alt="subscripcion nivel 6" />
             </div>
             <div className="w-full h-5/6 grid grid-cols-2 pt-3">
 
                 <div className="w-full flex justify-between">
 
-                    <div className="w-30 flex">
+                    <div className="w-30 flex max-md:hidden">
                         <img 
                             className="w-8 h-8 relative bottom-2"
                             src="ubicacion.png" 
@@ -77,7 +77,7 @@ const Header = ()=> {
                     />
                 </div>
 
-                <div className="w-full h-fit flex justify-end">
+                <div className="w-full h-fit flex justify-end max-md:hidden">
                     <NavCuenta />
                 </div>
             </div>

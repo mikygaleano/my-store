@@ -58,11 +58,11 @@ export const ProductsPage = ()=> {
 
 
     return (
-        <section key={uniquePageId} className="w-full flex flex-row bg-slate-100">
-            <div className="w-1/4">
+        <section key={uniquePageId} className="w-full max-md:w-screen min-h-screen grid grid-rows-none max-md:place-content-center bg-slate-100">
+            <div className="w-1/4 h-full col-end-1 max-md:hidden">
                 <Aside/>
             </div>
-            <div className="w-3/4 flex flex-col mb-10">
+            <div className="w-3/4 max-md:w-full h-full col-start-3 flex flex-col mb-10">
                 <CardsProducts data={data} onClickDatail={onClickDetail}/>
             </div>
         </section>

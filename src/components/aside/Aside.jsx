@@ -3,9 +3,9 @@
 export const Aside = ()=> {
 
     return (
-        <aside className="flex flex-col gap-5 p-2 mt-10">
+        <aside className="w-full flex flex-col gap-5 p-2 mt-10">
 
-                    <div className="flex flex-col items-start justify-center gap-2">
+                    <div className="w-full flex flex-col items-start justify-center gap-2">
                         <h4 className="font-semibold text-sm">Modelo</h4>
                         <strong className="text-xs font-medium text-slate-700">
                             Slim <span>(152)</span>
@@ -17,7 +17,7 @@ export const Aside = ()=> {
                             Switc <span className="tex text-slate-400">(1)</span>
                         </strong>
                     </div>
-                    <div className="flex flex-col items-start justify-center gap-2">
+                    <div className="w-full flex flex-col items-start justify-center gap-2">
                         <h4 className="font-semibold text-sm">Submodelo</h4>
                         <strong className="text-xs font-medium text-slate-700">
                             Slim <span className="tex text-slate-400">(140)</span>
@@ -29,7 +29,7 @@ export const Aside = ()=> {
                             Switc <span className="tex text-slate-400">(13)</span>
                         </strong>
                     </div>
-                    <div className="flex flex-col items-start justify-center gap-2">
+                    <div className="w-full flex flex-col items-start justify-center gap-2">
                         <h4 className="font-semibold text-sm">Condición</h4>
                         <strong className="text-xs font-medium text-slate-700">
                             Nuevo <span>(15)</span>
@@ -41,7 +41,7 @@ export const Aside = ()=> {
                             Reacondicionado <span>(6)</span>
                         </strong>
                     </div>
-                    <div className="flex flex-col items-start justify-center gap-2">
+                    <div className="w-full flex flex-col items-start justify-center gap-2">
                         <h4 className="font-semibold text-sm">Ubicación</h4>
                         <strong className="text-xs font-medium text-slate-700">
                             Capital Federal <span>(65)</span>
@@ -71,7 +71,7 @@ export const Aside = ()=> {
                             Bs.As. Costa Atlántica <span>(7)</span>
                         </strong>
                     </div>
-                    <div className="flex flex-col items-start justify-center gap-2">
+                    <div className="w-full flex flex-col items-start justify-center gap-2">
                         <h4 className="font-semibold text-sm">Costo de envío</h4>
                         <strong className="text-xs font-medium text-slate-700">
                             Hasta $40.000 <span className="tex text-slate-400">(82)</span>
